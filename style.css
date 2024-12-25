@@ -1,0 +1,554 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+}
+
+body{
+    
+    font-weight: 700;
+    line-height: 22.5px;
+    letter-spacing: -0.3px;
+
+    color: #ffffff;
+    
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+    
+    background-color: #242C3B;
+}
+
+.app_wrapper {
+    width: 100%;
+    height: 100vh;
+    
+}
+
+.page_block_wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.page_block{
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    padding: 0px 20px;
+    box-sizing: border-box;
+}
+
+.page_background {
+    background-image: url("/static/background2.jpg");
+    
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    padding-top: 21px;
+    box-sizing: border-box;
+    z-index: -1;
+}
+
+.main-menu-container {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0px 50px 0px;
+}
+
+.menu-grid {
+    padding-top: 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    
+    gap:20px;
+    
+}
+
+
+.play_button{
+    cursor: pointer;
+    border: 1px #ffffff solid;
+    margin-top: 10px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 45px;
+    background: linear-gradient(145deg, #4CAF50 0%, #087f23 100%);
+    box-shadow: 0 6px #065f18, 0 -6px #4CAF50 inset;
+    
+    
+}
+
+.play_button span{
+    padding-top: 8px;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    display: flex;
+    align-self:flex-start;
+    justify-content:center;
+    width: 95%;
+    height: 60%;
+    padding-bottom: 5px;
+    border-radius: 20px;
+    
+}
+
+
+.app-container.active{
+    display: grid;
+}
+
+.app-container{
+    
+    margin-left: 10px;
+    margin-right: 10px;
+    z-index: 1;
+    position: absolute;
+    height: 100%;
+    display: none;
+}
+.menu_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    
+    position: relative;
+}
+.not-available img{
+    cursor: default;
+    
+    filter:opacity(0.7);
+    
+}
+.not-available::before{
+    filter: none;
+    position: absolute;
+    content: 'Скоро...';
+    font-size: 20px;
+    top: 60px;
+    color: red;
+    z-index: 2;
+    
+    
+}
+
+
+
+.menu-item-label{
+    margin-top: 5px;
+    color: azure;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 22.5px;
+    letter-spacing: 0.7px;
+    color: #ffffff;
+    
+}
+
+img {
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.7);
+    border-radius: 30%;
+    width: 160px;
+    height: 150px;
+}
+
+
+.buttons{
+    
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+    cursor: pointer;
+    
+}
+.button{
+    
+    border-radius: 15px;
+    width: 230px;
+    padding: 5px;
+    
+    font-size: 17px;
+    
+
+    color: #ffffff;
+    background: linear-gradient(150deg, #6a11cb 30%, #2575fc 80%);
+    justify-self: center;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+}
+
+
+
+/*===================================================*/
+
+.instruction-grid{
+   height: fit-content;
+   margin-top: 200px;
+   
+   
+    border-radius: 15px;
+    width: 93%;
+    
+    justify-content: center;
+    background: linear-gradient(150deg, #6a11cb 30%, #2575fc 80%);
+
+    padding-left: 20px;
+    padding-bottom: 15px;
+    
+}
+
+.instruction_text_label{
+    
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.instruction_text{
+    font-weight: 400;
+    text-align:left;
+}
+
+.button_menu{
+    border-radius: 15px;
+    
+    
+    width: 230px;
+    padding: 5px;
+    
+    font-size: 17px;
+    
+    color: #ffffff;
+    background: linear-gradient(150deg, #6a11cb 30%, #2575fc 80%);
+    justify-self: center;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+
+}
+
+
+/*================================================================*/
+.mines-container{
+    padding-top: 100px;
+}
+.mines-field-grid{
+    margin-top: 50px;
+    
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    grid-template-rows: repeat(5, 60px);
+    grid-gap: 7px;
+    background-color: rgba(78, 78, 78, 0.5);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.mines_field_cell{
+    width: 60px;
+    height: 60px;
+    background-color: #38A4CF;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mines-select-grid{
+    border-radius: 20px;
+    margin-top: 20px;
+    background-color:rgba(78, 78, 78, 0.5);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.button-mine{
+    width: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #38A4CF;
+    display: flex;
+    justify-content: center;
+}
+
+.number-bombs{
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* ==================================================== */
+.lucky-jet-container{
+    padding-top: 100px;
+    width: 100%;
+    height: 100%;
+}
+.lucky-jet-container img{
+    box-shadow: none;
+    width: auto;
+    height: auto;
+}
+.lucky-jet-grid{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+   
+    
+}
+.logo-grid{
+    
+    border: 1px solid #1c1919;
+    
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color:rgba(21,16,30,255);
+    
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+
+}
+.lucky-jet-field{
+    width: 80%;
+    
+    
+    background-color: transparent;
+    overflow: hidden;
+    
+    
+}
+.main-game{
+    border: 1px solid rgb(38, 28, 74);
+    position: relative;
+    
+    width: 100%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgba(21,16,40,255);
+    overflow: hidden;
+    position: relative;
+    
+}
+
+
+
+
+.line-v {
+    
+    
+    top: 0;
+    left: 0px;
+    width: 20px;
+    height: 250px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="13" height="164" viewBox="0 0 13 164" fill="none"><rect y="164" width="3" height="13" transform="rotate(-90 0 164)" fill="%23261C4A"/><rect y="98" width="2" height="6" transform="rotate(-90 0 98)" fill="%23261C4A"/><rect y="130" width="2" height="6" transform="rotate(-90 0 130)" fill="%23261C4A"/><rect y="66" width="2" height="6" transform="rotate(-90 0 66)" fill="%23261C4A"/><rect y="34" width="2" height="6" transform="rotate(-90 0 34)" fill="%23261C4A"/></svg>');
+    background-repeat: repeat-y;
+    border-right: 1px solid rgb(38, 28, 74);
+    
+    
+}
+
+/* Keyframes for Vertical Line Animation */
+@keyframes line-v-scroll {
+    100% {
+        background-position-y: 164px; /* Scroll vertically */
+    }
+}
+
+.line {
+    
+    
+    top: 92%; 
+    left: 0; 
+    width: 100%; 
+    height: 20px; 
+    border-top: 1px solid rgb(38, 28, 74); 
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="140" height="21" viewBox="0 0 164 21"><rect x="3" y="21" width="3" height="13" transform="rotate(180 3 21)" fill="%23261C4A"/><rect x="98" y="21" width="2" height="6" transform="rotate(180 98 21)" fill="%23261C4A"/><rect x="130" y="21" width="2" height="6" transform="rotate(180 130 21)" fill="%23261C4A"/><rect x="66" y="21" width="2" height="6" transform="rotate(180 66 21)" fill="%23261C4A"/><rect x="34" y="21" width="2" height="6" transform="rotate(180 34 21)" fill="%23261C4A"/></svg>') repeat-x; /* Horizontal repeat */
+    
+}
+
+
+@keyframes line-scroll {
+    100% {
+        background-position-x: -140px; 
+    }
+}
+
+.game-vizualisation{
+    z-index: 2;
+    position: absolute;
+}
+
+.lucky-men{
+    
+    position: absolute;
+    z-index: 3;
+}
+.lucky-men img{
+    
+    transform: translate(215px, 80px);
+    width: 70px;
+    
+}
+.clouds-back{
+    z-index: 0;
+    position: absolute;
+    top: 50%;
+}
+.clouds-back img{
+   
+    border-radius: 0;
+    width: 100%;
+    margin-left: 20px;
+    
+}
+.stars-back{
+    top: 0;
+    position: absolute;
+}
+.stars-back img{
+    
+    margin-left: 20px;
+    width: 100%;
+    
+}
+
+.score-game{
+    color: #6a11cb;
+    font-size: 30px;
+    position: absolute;
+    z-index: 4;
+    top:30%;
+    left:35%;
+}
+
+.result-lucky-jet{
+    
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 15%;
+    width: 80%;
+    background-color:rgba(21,16,30,255);
+    border: 1px solid rgb(38, 28, 74); 
+    border-radius: 20px;
+}
+
+.result-lucky-jet span{
+    color: #6a11cb;
+    opacity: 0;
+}
+/* ======================================================= */
+.brawl-pirates-container{
+    width: 100%;
+}
+
+.gem{
+    width: 30px !important;
+    position: absolute;
+    top: 100%;
+    left: 30%;
+}
+
+.brawl-pirates-container img{
+    box-shadow: none;
+    width: 100px;
+    height: auto;
+}
+.brawl-pirates-grid{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+.brawl-pirates-field{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    
+    
+}
+.skeleton{
+    position: absolute;
+}
+.skeleton:nth-child(1) {
+    top: 50%;
+    left: 10%;
+}
+
+.skeleton:nth-child(2) {
+    top: 50%;
+    left: 40%;
+}
+
+.skeleton:nth-child(3) {
+    top: 50%;
+    left: 70%;
+}
+.animated-skeleton{
+    transform: translateY(-40px);
+}
+.brawl-pirates-grid>.buttons> .button{
+    background: linear-gradient(to bottom, #ff4d4d, #b32424);
+    box-shadow: 0px 4px 0px #930000, /* Bottom edge for 3D effect */
+                  inset 0px 2px 4px rgba(255, 255, 255, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.brawl-pirates-grid>.buttons>.button:active{
+    transform: translateY(4px); /* Simulates pressing down */
+    box-shadow: 0px 1px 0px #930000, inset 0px 2px 4px rgba(255, 255, 255, 0.5); /* Reduce 3D depth */
+    
+}
+
+
+#particleCanvas{
+    z-index: 0;
+    position: absolute;
+}
+
+/* .visible-canvas{
+
+} */
