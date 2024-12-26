@@ -48,7 +48,7 @@ body{
 }
 
 .page_background {
-    background-image: url("/static/background2.jpg");
+    background-image: url("/miniAPP/static/background2.jpg");
     
     position: absolute;
     display: flex;
