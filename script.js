@@ -11,10 +11,10 @@ $(document).ready(function() {
       var element = document.querySelector('.page_background');
       const background = window.getComputedStyle(element).background;
     
-      if (background.includes('url("/static/background2.jpg")')) {
+      if (background.includes('url("/miniAPP/static/background2.jpg")')) {
         
       } else {
-        $('.page_background').css('background', 'url("/static/background2.jpg")');
+        $('.page_background').css('background', 'url("/miniAPP/static/background2.jpg")');
         $('#particleCanvas').css('display', 'block')
       }
     });
@@ -31,7 +31,7 @@ $(document).ready(function() {
         toggle_app(prev_app, 'lucky-jet-container')
       });
       $('.brawlpirates-start').on('click', function(){
-        $('.page_background').css('background', 'url("/static/landscape.jpg")');
+        $('.page_background').css('background', 'url("/miniAPP/static/landscape.jpg")');
         $('#particleCanvas').css('display', 'none')
         var prev_app = $('.app-container.active');
 
@@ -379,7 +379,7 @@ function shuffle() {
       .addClass('animated-skeleton');
       $(".brawl-pirates-field")
       .find('.animated-skeleton')
-      .append('<img class="gem" src="/static/Gem.png" alt="">'); // Appends the gem to each .skeleton
+      .append('<img class="gem" src="/miniAPP/static/Gem.png" alt="">'); // Appends the gem to each .skeleton
   
       return;
     }
