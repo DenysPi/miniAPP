@@ -11,7 +11,7 @@ $(document).ready(function() {
       var element = document.querySelector('.page_background');
       const background = window.getComputedStyle(element).background;
     
-      if (background.includes('url("/miniAPP/static/background2.jpg")')) {
+      if (background.includes('url("miniAPP/static/background2.jpg")')) {
         
       } else {
         $('.page_background').css('background', 'url("/miniAPP/static/background2.jpg")');
